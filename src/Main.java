@@ -14,14 +14,10 @@ public class Main {
         System.out.println("Task_2");
         int clientDeviceYear = 2015;  //год выпуска устройства клиента
         //переменная clientOS инициирована ранее и находится в поле видимости
-        if (clientOS == 1) {
-            if (clientDeviceYear < 2015) {
-
-                System.out.println("Установите облегченную версию приложения для Android по ссылке");
-            } else {
-                System.out.println("Установите версию приложения для Android по ссылке");
-            }
-
+        if (clientOS == 1 && clientDeviceYear < 2015) {
+            System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        } else if (clientOS == 1 && clientDeviceYear >= 2015) {
+            System.out.println("Установите версию приложения для Android по ссылке");
         } else if (clientOS == 0 && clientDeviceYear < 2015) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
         } else {
@@ -31,18 +27,16 @@ public class Main {
         System.out.println("Task_3");
         int startYear = 1584; //значение года, с которого был введен отсчет високосных
         int year = 2021;      //значение года, который необходимо определить
-        if (year >= startYear) {
-            if ((year - startYear) % 400 == 0) {
-                System.out.println(year + " год является високосным");
-            } else if ((year - startYear) % 100 == 0) {
-                System.out.println(year + " год не является високосным");
-            } else if ((year - startYear) % 4 == 0) {
-                System.out.println(year + " год является високосным");
-            } else {
-                System.out.println(year + " год не является високосным");
-            }
-        } else {
+        if (year < startYear) {
             System.out.println("Невозможно определить");
+        } else if ((year - startYear) % 400 == 0) {
+            System.out.println(year + " год является високосным");
+        } else if ((year - startYear) % 100 == 0) {
+            System.out.println(year + " год не является високосным");
+        } else if ((year - startYear) % 4 == 0) {
+            System.out.println(year + " год является високосным");
+        } else {
+            System.out.println(year + " год не является високосным");
         }
 
 
