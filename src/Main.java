@@ -19,27 +19,32 @@ public class Main {
 
                 System.out.println("Установите облегченную версию приложения для Android по ссылке");
             } else {
-                System.out.println("Установите обычную версию приложения для Android по ссылке");
+                System.out.println("Установите версию приложения для Android по ссылке");
             }
 
         } else if (clientOS == 0 && clientDeviceYear < 2015) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке");
         } else {
-            System.out.println("Установите обычную версию приложения для iOS по ссылке");
+            System.out.println("Установите версию приложения для iOS по ссылке");
         }
 
         System.out.println("Task_3");
         int startYear = 1584; //значение года, с которого был введен отсчет високосных
         int year = 2021;      //значение года, который необходимо определить
-        if (year > startYear) {
-            if ((year - startYear) % 4 == 0 && (year - startYear) % 400 == 0 && (year - startYear) % 100 != 0) {
-                System.out.println(year + " год является високосным.");
+        if (year >= startYear) {
+            if ((year - startYear) % 400 == 0) {
+                System.out.println(year + " год является високосным");
+            } else if ((year - startYear) % 100 == 0) {
+                System.out.println(year + " год не является високосным");
+            } else if ((year - startYear) % 4 == 0) {
+                System.out.println(year + " год является високосным");
             } else {
-                System.out.println(year + " год не является високосным.");
+                System.out.println(year + " год не является високосным");
             }
         } else {
-            System.out.println("Невозможно определить.");
+            System.out.println("Невозможно определить");
         }
+
 
         System.out.println("Task_4");
         byte deliveryDistance = 95;     //дистанция от офиса до клиента
